@@ -15,10 +15,14 @@ export default function Vessels({ lang }: VesselsProps) {
   const dict = getDictionary(lang);
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
 
-  // Handle initial load animation
+   // Handle initial page load animation
   useEffect(() => {
-    setIsLoaded(true);
+    setTimeout(() => {
+      setIsPageLoaded(true);
+      setIsLoaded(true);
+    }, 100);
   }, []);
 
   // Handle scroll fade effect
@@ -37,6 +41,11 @@ export default function Vessels({ lang }: VesselsProps) {
   }, []);
 
   return (
+    <div 
+      className={`min-h-screen bg-white transition-all duration-1000 ${
+        isPageLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative h-screen w-full">
@@ -124,6 +133,7 @@ export default function Vessels({ lang }: VesselsProps) {
         {/* Add Showcase Section */}
         <ShowcaseSection lang={lang} />
       </div>
+    </div>
     </div>
   );
 }
