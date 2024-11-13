@@ -47,11 +47,11 @@ export function Navbar({ lang }: NavbarProps) {
           >
             <Image
               src="/images/logo.png"
-              alt="Pahala Harapan Lestari"
+              alt="Pahala Harapan Lestari Logo"
               width={200}
               height={50}
-              className="h-12 w-auto"
-              priority
+              priority={true} // Only use if this image must load first
+              className="w-auto h-auto"
             />
           </Link>
 
