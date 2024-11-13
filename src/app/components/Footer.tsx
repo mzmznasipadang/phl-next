@@ -14,7 +14,7 @@ export function Footer({ lang }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#000080] text-white py-12">
+    <footer className="bg-[#252F56] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Left Column */}
@@ -126,9 +126,9 @@ export function Footer({ lang }: FooterProps) {
               <Image
                 src="/images/naspad-logo.png"
                 alt="NasPad Studio"
-                width={440} // Adjust based on your logo size
-                height={120} // Adjust based on your logo size
-                className="w-auto h-10" // Adjust height as needed
+                width={400} // Adjust based on your logo size
+                height={200} // Adjust based on your logo size
+                className="w-auto h-24" // Adjust height as needed
               />
             </Link>
           </p>

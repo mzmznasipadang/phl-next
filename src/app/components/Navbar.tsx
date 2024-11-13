@@ -28,7 +28,7 @@ export function Navbar({ lang }: NavbarProps) {
 
   // Calculate navbar properties based on scroll
   const isAtTop = scrollY < 50;
-  const navBackground = isAtTop ? "transparent" : "bg-[#000080]/95";
+  const navBackground = isAtTop ? "transparent" : "bg-[#252F56]/95";
   const navHeight = Math.max(80 - scrollY * 0.1, 64); // Shrink from 80px to min 64px
   const logoScale = isAtTop ? 1 : 0.9;
 
