@@ -56,7 +56,7 @@ export function Footer({ lang }: FooterProps) {
                   <p>Jakarta Utara, 14410</p>
                 </div>
               </div>
-              
+
               {/* Right Side */}
               <div className="space-y-4">
                 <div>
@@ -78,7 +78,9 @@ export function Footer({ lang }: FooterProps) {
 
           {/* Right Column - Navigation */}
           <div className="md:col-span-4 md:text-right">
-            <h3 className="text-2xl font-bold mb-4">{dict["footer.explore"]}</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              {dict["footer.explore"]}
+            </h3>
             <nav className="space-y-2">
               <Link href={`/${lang}`} className="block hover:text-gray-300">
                 {dict["footer.nav.home"]}
@@ -113,8 +115,22 @@ export function Footer({ lang }: FooterProps) {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm">
-          <p>
-            {dict["footer.copyright"]} {currentYear} | {dict["footer.builtBy"]}
+          <p className="flex items-center justify-center gap-2">
+            {dict["footer.copyright"]} {currentYear} | Built with Love by{" "}
+            <Link
+              href="https://naspadstudio.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src="/images/naspad-logo.png"
+                alt="NasPad Studio"
+                width={440} // Adjust based on your logo size
+                height={120} // Adjust based on your logo size
+                className="w-auto h-10" // Adjust height as needed
+              />
+            </Link>
           </p>
         </div>
       </div>
