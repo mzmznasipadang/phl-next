@@ -96,14 +96,14 @@ export function Clients({ lang }: ClientsProps) {
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
           {/* Left side - Legend */}
           <div className="w-full lg:w-1/3">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#000080] mb-6 sm:mb-10">
               {dict["clients.title"]}
             </h2>
             <div className="space-y-4 sm:space-y-6">
               {legendItems.map(({ type, label }) => (
                 <button
                   key={type}
-                  className={`flex items-center gap-4 w-full text-left transition-all duration-300 ${
+                  className={`flex items-center gap-4 w-full text-left text-[#000080] transition-all duration-300 ${
                     activeType === type || hoveredType === type
                       ? "opacity-100 translate-x-2"
                       : "opacity-70 hover:opacity-90"
@@ -182,7 +182,7 @@ export function Clients({ lang }: ClientsProps) {
         
         {/* Customer Marquee Section */}
         <div className={styles.customerSection}>
-          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#000080] text-center mb-8">
             {dict["clients.customers.title"]}
           </h3>
 
