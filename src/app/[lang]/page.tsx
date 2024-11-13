@@ -6,7 +6,7 @@ import type { Locale } from '../lib/types';
 import { Clients } from '../components/home/clients';
 
 interface Props {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 function isValidLocale(lang: string): lang is Locale {
@@ -14,7 +14,8 @@ function isValidLocale(lang: string): lang is Locale {
 }
 
 export default async function HomePage({ params }: Props) {
-  const validLang = isValidLocale(params.lang) ? params.lang : 'en';
+  const resolvedParams = await params;
+  const validLang = isValidLocale(resolvedParams.lang) ? resolvedParams.lang : 'en';
 
   return (
     <main>
@@ -26,4 +27,13 @@ export default async function HomePage({ params }: Props) {
       <Clients lang={validLang} />
     </main>
   );
+}
+
+// You can also add generateStaticParams if needed
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' },
+    { lang: 'id' },
+    { lang: 'zh' },
+  ];
 }

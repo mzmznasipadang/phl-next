@@ -3,7 +3,7 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-import { Locale } from '../lib/types';
+import { Locale, locales } from '../lib/types';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -13,26 +13,25 @@ const openSans = Open_Sans({
 });
 
 function isValidLocale(lang: string): lang is Locale {
-  return ['en', 'id', 'zh'].includes(lang as Locale);
+  return locales.includes(lang as Locale);
 }
 
 type Props = {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
 export async function generateStaticParams() {
-  return [
-    { lang: 'en' },
-    { lang: 'id' },
-    { lang: 'zh' },
-  ];
+  return locales.map((lang) => ({
+    lang,
+  }));
 }
 
 export async function generateMetadata(
-  { params }: Props
+  { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-  const validLang = isValidLocale(params.lang) ? params.lang : 'en';
+  const resolvedParams = await params;
+  const validLang = isValidLocale(resolvedParams.lang) ? resolvedParams.lang : 'en';
   
   const descriptions: Record<Locale, string> = {
     en: 'Your Trusted Partner in Maritime Solutions',
@@ -42,7 +41,7 @@ export async function generateMetadata(
 
   return {
     title: 'Pahala Harapan Lestari',
-    description: descriptions[validLang as Locale],
+    description: descriptions[validLang],
   };
 }
 
@@ -50,7 +49,8 @@ export default async function RootLayout({
   children,
   params,
 }: Props) {
-  const validLang = isValidLocale(params.lang) ? params.lang : 'en';
+  const resolvedParams = await params;
+  const validLang = isValidLocale(resolvedParams.lang) ? resolvedParams.lang : 'en';
 
   return (
     <html lang={validLang} className={openSans.className}>
