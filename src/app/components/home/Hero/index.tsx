@@ -15,7 +15,7 @@ export function Hero({ lang }: HeroProps) {
   const dict = getDictionary(lang);
   const [scrollY, setScrollY] = useState(0);
   const { containerRef, isReady } = useYouTubePlayer({
-    videoId: 'dQw4w9WgXcQ',
+    videoId: 'KWL_GfKfEMw',
     options: {
       playerVars: {
         autoplay: 1,
@@ -28,7 +28,7 @@ export function Hero({ lang }: HeroProps) {
         mute: 1,
         modestbranding: 1,
         loop: 1,
-        playlist: 'dQw4w9WgXcQ',
+        playlist: 'KWL_GfKfEMw',
         playsinline: 1,
       },
     },
