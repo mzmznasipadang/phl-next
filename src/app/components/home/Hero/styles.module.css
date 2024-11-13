@@ -53,3 +53,9 @@
 .fadeIn {
   animation: fadeIn 1s ease-in forwards;
 }
+
+.fadeOverlay {
+  @apply fixed inset-0 bg-black/30 pointer-events-none;
+  z-index: 1; /* Change from -1 to 1 */
+  opacity: var(--scroll-opacity, 0.3); /* Added default opacity */
+}
