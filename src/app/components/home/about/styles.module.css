@@ -1,0 +1,96 @@
+/* src/app/components/home/about/styles.module.css */
+.aboutSection {
+  @apply relative py-24;
+  background-color: #CCD4E0;
+}
+
+.container {
+  @apply max-w-6xl mx-auto px-6 lg:px-8;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  @apply text-4xl md:text-5xl font-bold mb-16 text-black;
+}
+
+.content {
+  @apply flex flex-col lg:flex-row gap-16;
+}
+
+.imagesContainer {
+  @apply w-full lg:w-[55%];
+}
+
+.mainImage {
+  @apply relative w-full overflow-hidden rounded-sm;
+  aspect-ratio: 16 / 9;
+}
+
+.mainImage:hover img {
+  transform: scale(1.05);
+}
+
+.imageGrid {
+  @apply flex gap-6;
+}
+
+.secondaryImage {
+  @apply relative overflow-hidden rounded-sm flex-[2];
+  aspect-ratio: 3 / 2;
+}
+
+.smallImage {
+  @apply relative overflow-hidden rounded-sm flex-1;
+  aspect-ratio: 1;
+}
+
+.mainImage img,
+.secondaryImage img,
+.smallImage img {
+  @apply w-full h-full object-cover transition-transform duration-700;
+}
+
+.secondaryImage:hover img,
+.smallImage:hover img {
+  transform: scale(1.05);
+}
+
+.textContent {
+  @apply w-full lg:w-[45%];
+}
+
+.accentLine {
+  @apply absolute left-0 top-0 bottom-0 w-2;
+  background-color: #000080;
+}
+
+.textWrapper {
+  @apply pl-8;
+}
+
+.subtitle {
+  @apply text-2xl md:text-3xl font-medium mb-8 text-gray-800;
+}
+
+.description {
+  @apply space-y-6 text-gray-700 text-lg leading-relaxed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .accentLine {
+    @apply w-full h-1 bottom-auto;
+  }
+  
+  .textWrapper {
+    @apply pt-8 pl-0;
+  }
+}
