@@ -21,7 +21,7 @@ export function Footer({ lang }: FooterProps) {
           <div className="space-y-6">
             <div className="flex items-start">
               <Image
-                src="/images/logo.png"
+                src="/images/Logo.png"
                 alt="Pahala Harapan Lestari Logo"
                 width={200}
                 height={50}

@@ -46,7 +46,7 @@ export function Navbar({ lang }: NavbarProps) {
             style={{ transform: `scale(${logoScale})` }}
           >
             <Image
-              src="/images/logo.png"
+              src="/images/Logo.png"
               alt="Pahala Harapan Lestari Logo"
               width={200}
               height={50}
