@@ -14,6 +14,16 @@ interface AboutProps {
 export function About({ lang }: AboutProps) {
   const dict = getDictionary(lang);
 
+  const safeSplit = (text?: string, separator = "\n") => {
+    if (!text) return [];
+    try {
+      return text.split(separator).filter(Boolean);
+    } catch (error) {
+      console.error("Error splitting text:", error);
+      return [];
+    }
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -159,13 +169,13 @@ export function About({ lang }: AboutProps) {
                 {dict["about.steady.mission"]}
               </h3>
               <div className="space-y-4 text-gray-700">
-                {dict["about.steady.missionleading"]
-                  .split("\n")
-                  .map((item, index) => (
+                {safeSplit(dict["about.steady.missionleading"]).map(
+                  (item, index) => (
                     <p key={index} className="leading-relaxed">
                       {item}
                     </p>
-                  ))}
+                  )
+                )}
               </div>
             </div>
             <div className={`${styles.imageHover} order-1 md:order-2`}>
@@ -212,17 +222,16 @@ export function About({ lang }: AboutProps) {
             {/* Awards List */}
             <div className="space-y-8">
               <div className="space-y-6">
-                {dict["about.outstanding.awards"]
-                  .split("\n\n")
-                  .filter(Boolean)
-                  .map((award, index) => (
+                {safeSplit(dict["about.outstanding.awards"], "\n\n").map(
+                  (award, index) => (
                     <p
                       key={index}
                       className="text-gray-700 font-medium leading-relaxed"
                     >
                       {award}
                     </p>
-                  ))}
+                  )
+                )}
               </div>
 
               {/* Award Certificates/Logos */}

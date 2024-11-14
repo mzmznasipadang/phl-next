@@ -212,22 +212,29 @@ PENGHARGAAAN PERUSAHAAN MANAJEMEN K3 TERBAIK DARI WALIKOTA PANGKALPINANG`,
       "Galeri armada terbaik kami,yang dirancang dengan perhatian dan keunggulan.\nMahakarya dalam kelasnya.",
 
     //About Page
-    "about.top.title": "Memberikan yang terbaik sejak 1982.",
+   "about.top.title": "Memberikan yang terbaik sejak 1982.",
     "about.top.subtitle": "Tentang PT. PHL",
     "about.hero.title": "Pengrajin di hati.",
-    "about.leading.heading":
-      "Pahala Harapan Lestari adalah perusahaan galangan kapal keluarga yang diakui secara nasional, berakar di Indonesia sejak 1982. Sebagai spesialis dalam pembangunan dan perbaikan kapal, kami mewujudkan nilai-nilai kesatuan, keterampilan, inovasi, dan tanggung jawab. Untuk memanfaatkan potensi ini, kami menawarkan solusi maritim melalui keahlian kami dalam desain, pembangunan kapal, perbaikan kapal, dan layanan terkait. \nSelama beberapa dekade terakhir, kami telah mengubah ranah pembangunan kapal dengan memperkenalkan standardisasi dan produksi serial. Hingga saat ini, setelah membuat lebih dari 100 kapal, prinsip-prinsip dasar ini tetap tidak berubah. Melangkah maju, kami bertujuan untuk memadukan teknik standardisasi kami yang mapan dengan kemajuan digitalisasi, memposisikan diri kami sebagai galangan kapal paling ramah lingkungan di Indonesia.",
+    "about.leading.heading": "Pahala Harapan Lestari adalah perusahaan galangan kapal keluarga yang diakui secara nasional...",
     "about.steady.heading": "Prinsip yang teguh.",
     "about.steady.vision": "Visi",
-    "about.steady.visionleading":
-      "Menjadi perusahaan galangan kapal yang melayani dalam pembangunan kapal baru dan perbaikan kapal dengan mengutamakan kualitas, kesehatan & keselamatan kerja dan lingkungan hijau sesuai dengan peraturan nasional dan internasional",
+    "about.steady.visionleading": "Menjadi perusahaan galangan kapal...",
     "about.steady.mission": "Misi",
-    "about.steady.missionleading":
-      "Menciptakan sumber daya manusia yang berkualitas dan handal\nProduk dengan kualitas, pengiriman tepat waktu dan ramah lingkungan\nBiaya dan harga yang kompetitif melalui efektivitas, produktivitas dan efisiensi\nMengutamakan lingkungan kesehatan & keselamatan kerja dan lingkungan hijau",
+    "about.steady.missionleading": "Menciptakan sumber daya manusia yang berkualitas\nMenghasilkan produk berkualitas\nMengutamakan efisiensi dan produktivitas",
     "about.qhse.title": "Kebijakan QHSE",
-    "about.qhse.paragraph":
-      "Menerapkan sistem manajemen mutu, lingkungan dan keselamatan dan kesehatan kerja sesuai dengan standar manajemen yang berlaku yaitu ISO 9001:2015 (Mutu), ISO 14001:2015 (Lingkungan) ISO 45001:2018 (Keselamatan dan Kesehatan Kerja). \nMemenuhi persyaratan pelanggan dan berusaha meningkatkan kinerja perusahaan secara berkelanjutan. \nMeminimalkan jumlah keluhan pelanggan, terjadinya pencemaran lingkungan dan terjadinya kecelakaan kerja dan penyakit akibat kerja.\nMemenuhi dan mematuhi persyaratan perundang-undangan dan persyaratan lainnya yang terkait dengan mutu, K3 dan lingkungan. \nMelaksanakan perbaikan berkelanjutan terhadap efektifitas sistem manajemen mutu, sistem manajemen lingkungan dan sistem manajemen keselamatan dan kesehatan kerja",
-    "about.outstanding.title": "Pencapaian Luar Biasa.",
+    "about.qhse.paragraph": "Menerapkan sistem manajemen...",
+    "about.outstanding.title": "Pencapaian Luar Biasa",
+    "about.outstanding.awards": `PENGHARGAAN PARAMAKARYA TAHUN 2021 DENGAN KUALIFIKASI "PEMIMPIN DALAM INDUSTRI" DARI PRESIDEN REPUBLIK INDONESIA
+
+PENGHARGAAN SIDHAKARYA TAHUN 2020 DALAM KATEGORI "EMERGING LEADER" DARI GUBERNUR KEP. BANGKA BELITUNG
+
+PENGHARGAAN PROGRAM PENCEGAHAN DAN PENANGGULANGAN COVID-19 DARI KATEGORI "SILVER" KEMENTERIAN KETENAGAKERJAAN REPUBLIK INDONESIA
+
+PENGHARGAAN DARI BIRO KLASIFIKASI INDONESIA DALAM KATEGORI KONTRIBUSI MITRA KERJA
+
+PENGHARGAAN PROGRAM PENILAIAN PERINGKAT KINERJA PERUSAHAAN DALAM PENGELOLAAN LINGKUNGAN HIDUP (PROPER) TAHUN 2021 DENGAN KATEGORI "BIRU"
+
+PENGHARGAAAN PERUSAHAAN MANAJEMEN K3 TERBAIK DARI WALIKOTA PANGKALPINANG`,
   },
 
   zh: {

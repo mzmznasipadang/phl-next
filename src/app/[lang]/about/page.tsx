@@ -4,7 +4,7 @@ import { locales, type Locale } from '@/app/lib/types';
 import type { Metadata } from 'next';
 
 type Props = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 function isValidLocale(lang: string): lang is Locale {
@@ -12,8 +12,9 @@ function isValidLocale(lang: string): lang is Locale {
 }
 
 export async function generateMetadata(
-  { params: { lang } }: Props
+  { params }: Props
 ): Promise<Metadata> {
+  const { lang } = await params;
   const validLang = isValidLocale(lang) ? lang : 'en';
   
   const titles: Record<Locale, string> = {
@@ -27,7 +28,8 @@ export async function generateMetadata(
   };
 }
 
-export default async function AboutPage({ params: { lang } }: Props) {
+export default async function AboutPage({ params }: Props) {
+  const { lang } = await params;
   const validLang = isValidLocale(lang) ? lang : 'en';
 
   return <About lang={validLang} />;
