@@ -132,8 +132,7 @@ export function Clients({ lang }: ClientsProps) {
               <Image
                 src="/images/clients/Map.svg"
                 alt="Indonesia Map"
-                width={800}
-                height={400}
+                fill
                 className={styles.mapImage}
                 priority
               />
@@ -147,7 +146,12 @@ export function Clients({ lang }: ClientsProps) {
                       ? styles.active
                       : styles.inactive
                   }`}
-                  style={{ left: "24%", top: "52%" }}
+                  style={{
+                    left: "24%",
+                    top: "52%",
+                    position: "absolute",
+                    transform: "translate(-50%, -50%)",
+                  }}
                   data-type="H"
                 >
                   <div className={styles.markerDot}>
@@ -165,7 +169,12 @@ export function Clients({ lang }: ClientsProps) {
                       ? styles.active
                       : styles.inactive
                   }`}
-                  style={{ left: "25%", top: "72%" }}
+                  style={{
+                    left: "25%",
+                    top: "69%",
+                    position: "absolute",
+                    transform: "translate(-50%, -50%)",
+                  }}
                   data-type="R"
                 >
                   <div className={styles.markerDot}>
@@ -179,7 +188,7 @@ export function Clients({ lang }: ClientsProps) {
             </div>
           </div>
         </div>
-        
+
         {/* Customer Marquee Section */}
         <div className={styles.customerSection}>
           <h3 className="text-2xl sm:text-3xl font-bold text-[#000080] text-center mb-8">

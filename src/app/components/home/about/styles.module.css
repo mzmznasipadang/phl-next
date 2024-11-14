@@ -11,7 +11,6 @@
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-
 .container.visible {
   opacity: 1;
   transform: translateY(0);
@@ -22,15 +21,15 @@
 }
 
 .content {
-  @apply flex flex-col lg:flex-row gap-16;
+  @apply flex flex-col lg:flex-row gap-16 p-4 md:p-6 lg:p-8; /* Added padding */
 }
 
 .imagesContainer {
-  @apply w-full lg:w-[55%];
+  @apply w-full lg:w-[55%] space-y-6; /* Added vertical spacing */
 }
 
 .mainImage {
-  @apply relative w-full overflow-hidden rounded-sm;
+  @apply relative w-full overflow-hidden rounded-lg shadow-lg; /* Enhanced rounded corners and added shadow */
   aspect-ratio: 16 / 9;
 }
 
@@ -39,16 +38,16 @@
 }
 
 .imageGrid {
-  @apply flex gap-6;
+  @apply flex gap-6 mt-6; /* Added top margin */
 }
 
 .secondaryImage {
-  @apply relative overflow-hidden rounded-sm flex-[2];
+  @apply relative overflow-hidden rounded-lg shadow-lg flex-[2]; /* Enhanced rounded corners and added shadow */
   aspect-ratio: 3 / 2;
 }
 
 .smallImage {
-  @apply relative overflow-hidden rounded-sm flex-1;
+  @apply relative overflow-hidden rounded-lg shadow-lg flex-1; /* Enhanced rounded corners and added shadow */
   aspect-ratio: 1;
 }
 
@@ -64,7 +63,7 @@
 }
 
 .textContent {
-  @apply w-full lg:w-[45%];
+  @apply w-full lg:w-[45%] p-4 md:p-6 lg:p-8; /* Added padding */
 }
 
 .accentLine {
@@ -73,7 +72,7 @@
 }
 
 .textWrapper {
-  @apply pl-8;
+  @apply pl-8 space-y-6; /* Added vertical spacing */
 }
 
 .subtitle {
@@ -84,6 +83,19 @@
   @apply space-y-6 text-gray-700 text-lg leading-relaxed;
 }
 
+/* Optional: Add transition for shadow on hover */
+.mainImage,
+.secondaryImage,
+.smallImage {
+  @apply transition-shadow duration-300;
+}
+
+.mainImage:hover,
+.secondaryImage:hover,
+.smallImage:hover {
+  @apply shadow-xl;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .accentLine {
@@ -92,5 +104,13 @@
   
   .textWrapper {
     @apply pt-8 pl-0;
+  }
+
+  .content {
+    @apply p-4; /* Adjusted padding for mobile */
+  }
+
+  .textContent {
+    @apply p-4; /* Adjusted padding for mobile */
   }
 }

@@ -3,16 +3,24 @@
   @apply bg-white relative overflow-hidden;
 }
 
+
 .mapContainer {
   @apply relative w-full;
+  aspect-ratio: 1600/800;
+  position: relative;
 }
 
 .mapImage {
-  @apply w-full h-auto object-contain;
+  @apply w-full h-full object-contain;
+  position: absolute;
+  inset: 0;
 }
 
 .markersContainer {
   @apply absolute inset-0 pointer-events-none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .marker {
@@ -32,7 +40,7 @@
 
 .markerDot {
   @apply w-4 h-4 rounded-full flex items-center justify-center 
-           transition-all duration-300 shadow-sm;
+         transition-all duration-300 shadow-sm;
 }
 
 .markerDot span {
@@ -59,9 +67,9 @@
 
 .markerCity {
   @apply absolute top-full left-1/2 -translate-x-1/2 mt-1
-           text-xs text-[#2d3e68] font-medium text-center
-           opacity-0 transition-all duration-300
-           bg-white px-2 py-1 rounded shadow-md;
+         text-xs text-[#2d3e68] font-medium text-center
+         opacity-0 transition-all duration-300
+         bg-white px-2 py-1 rounded shadow-md;
   white-space: nowrap;
   transform: translateY(10px);
 }
@@ -77,17 +85,26 @@
     @apply mt-6;
     aspect-ratio: 16/9;
   }
-
+  
   .markerDot {
     @apply w-3 h-3;
   }
-
+  
   .markerDot span {
     @apply text-[8px];
   }
-
+  
   .markerCity {
     @apply text-[10px];
+  }
+
+  /* Adjust marker positions for tablet */
+  .marker[data-type="H"] {
+    transform-origin: center;
+  }
+
+  .marker[data-type="R"] {
+    transform-origin: center;
   }
 }
 
@@ -95,9 +112,18 @@
   .mapContainer {
     aspect-ratio: 4/3;
   }
-
+  
   .marker.active .markerCity {
     @apply px-1;
+  }
+
+  /* Further adjust marker positions for mobile */
+  .marker[data-type="H"] {
+    transform-origin: center;
+  }
+
+  .marker[data-type="R"] {
+    transform-origin: center;
   }
 }
 
@@ -127,6 +153,8 @@
     box-shadow: 0 0 0 0 rgba(47, 58, 168, 0);
   }
 }
+
+/* Customer Section Styles - Kept as is */
 .customerSection {
   @apply mt-16 sm:mt-24;
 }
@@ -151,7 +179,7 @@
 
 .logoWrapper {
   @apply flex-shrink-0 px-8;
-  min-width: 200px; /* Adjust based on your needs */
+  min-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,7 +222,68 @@
   }
 }
 
-/* Pause on hover if desired */
 .marqueeTrack:hover {
   animation-play-state: paused;
+}
+
+/* Base marker styles */
+.marker {
+  @apply absolute pointer-events-auto transition-all duration-500;
+  transform: translate(-50%, -50%);
+}
+
+/* Specific marker positions for desktop */
+@media (min-width: 1025px) {
+  .marker[data-type="H"] {
+    left: 24%;
+    top: 52%;
+  }
+
+  .marker[data-type="R"] {
+    left: 25%;
+    top: 72%;
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .mapContainer {
+    aspect-ratio: 16/9;
+  }
+
+  .marker[data-type="H"] {
+    left: 24%;
+    top: 52%;
+  }
+
+  .marker[data-type="R"] {
+    left: 25%;
+    top: 72%;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 640px) {
+  .mapContainer {
+    aspect-ratio: 4/3;
+  }
+
+  /* Adjust these values based on your mobile layout */
+  .marker[data-type="H"] {
+    left: 24vw;  /* Using viewport width units */
+    top: 52%;
+  }
+
+  .marker[data-type="R"] {
+    left: 25vw;  /* Using viewport width units */
+    top: 72%;
+  }
+
+  .markerDot {
+    @apply w-3 h-3;  /* Smaller dots on mobile */
+  }
+
+  .markerCity {
+    @apply text-[10px] px-1;  /* Smaller text on mobile */
+  }
 }

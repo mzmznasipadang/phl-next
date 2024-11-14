@@ -61,7 +61,7 @@ export function Services({ lang }: ServicesProps) {
     {
       title: dict['services.repairs'],
       image: '/images/services/repairs.png',
-      href: `/${lang}/repairs`,
+      href: `/${lang}/services`,
       discoverMore: dict['services.discoverMore'],
     },
     {

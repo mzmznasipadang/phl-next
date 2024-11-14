@@ -1,66 +1,25 @@
-// app/[lang]/layout.tsx
+// src/app/[lang]/layout.tsx
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
-import { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
-import { Locale, locales } from '../lib/types';
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  weight: ['300', '400', '500', '600', '700', '800'],
-});
-
-function isValidLocale(lang: string): lang is Locale {
-  return locales.includes(lang as Locale);
-}
+import type { Locale } from '@/app/lib/types';
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: { lang: string };
 };
 
-export async function generateStaticParams() {
-  return locales.map((lang) => ({
-    lang,
-  }));
+function isValidLocale(lang: string): lang is Locale {
+  return ['en', 'id', 'zh'].includes(lang as Locale);
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ lang: string }> }
-): Promise<Metadata> {
-  const resolvedParams = await params;
-  const validLang = isValidLocale(resolvedParams.lang) ? resolvedParams.lang : 'en';
+export default function LocaleLayout({ children, params }: Props) {
+  const validLang = isValidLocale(params.lang) ? params.lang : 'en';
   
-  const descriptions: Record<Locale, string> = {
-    en: 'Your Trusted Partner in Maritime Solutions',
-    id: 'Mitra Terpercaya dalam Solusi Maritim',
-    zh: '您值得信赖的海事解决方案伙伴',
-  };
-
-  return {
-    title: 'Pahala Harapan Lestari',
-    description: descriptions[validLang],
-  };
-}
-
-export default async function RootLayout({
-  children,
-  params,
-}: Props) {
-  const resolvedParams = await params;
-  const validLang = isValidLocale(resolvedParams.lang) ? resolvedParams.lang : 'en';
-
   return (
-    <html lang={validLang} className={openSans.className}>
-      <body className="relative">
-        <Navbar lang={validLang} />
-        <main className="relative bg-transparent">
-          {children}
-        </main>
-        <Footer lang={validLang}/>
-      </body>
-    </html>
+    <div className="min-h-screen flex flex-col">
+      <Navbar lang={validLang} />
+      <main className="flex-grow">{children}</main>
+      <Footer lang={validLang} />
+    </div>
   );
 }
